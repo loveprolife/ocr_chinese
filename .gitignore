@@ -1,0 +1,8 @@
+.idea/
+*/__pycache__/
+*/*/__pycache__/
+*/*/*.hdf5
+*/*/*.h5
+crnn/test/recs/
+east/test/predict/
+east/test/temp/
