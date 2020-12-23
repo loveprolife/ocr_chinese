@@ -6,3 +6,6 @@
 crnn/test/recs/
 east/test/predict/
 east/test/temp/
+east/test/image/
+east/test/image2/
+east/test/image3/
