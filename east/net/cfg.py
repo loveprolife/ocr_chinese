@@ -3,7 +3,7 @@ import os
 train_task_id = '3T736'
 initial_epoch = 0
 # epoch_num = 24
-epoch_num = 1
+epoch_num = 10
 lr = 1e-3
 decay = 5e-4
 # clipvalue = 0.5  # default 0.5, 0 means no clip
@@ -28,12 +28,13 @@ elif max_train_img_size == 512:
     batch_size = 2
 else:
     batch_size = 1
-# steps_per_epoch = total_img * (1 - validation_split_ratio) // batch_size
-steps_per_epoch = 1
-# validation_steps = total_img * validation_split_ratio // batch_size
-validation_steps = 1
+batch_size = 2
+steps_per_epoch = total_img * (1 - validation_split_ratio) // batch_size
+# steps_per_epoch = 1
+validation_steps = total_img * validation_split_ratio // batch_size
+# validation_steps = 1
 
-data_dir = 'E:/datas/icpr/'
+data_dir = '../../../ocr_east_001/'
 origin_image_dir_name = 'image_10000/'
 origin_txt_dir_name = 'txt_10000/'
 train_image_dir_name = 'images_%s/' % train_task_id

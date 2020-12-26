@@ -14,6 +14,9 @@ def gen(batch_size=cfg.batch_size, is_val=False):
         with open(os.path.join(cfg.data_dir, cfg.val_fname), 'r') as f_val:
             f_list = f_val.readlines()
     else:
+        print(222)
+        print(os.path.join(cfg.data_dir, cfg.train_fname))
+        print(11111)
         with open(os.path.join(cfg.data_dir, cfg.train_fname), 'r') as f_train:
             f_list = f_train.readlines()
     while True:
