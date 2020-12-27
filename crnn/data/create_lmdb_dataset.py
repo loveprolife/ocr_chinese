@@ -1,12 +1,11 @@
-
 import lmdb
 import cv2
 import numpy as np
 import os
 
-OUT_PATH = 'F:/ocr_detection/project_OCR/crnn/data/train_lmdb'
-IN_PATH = 'E:/datas/train.txt'
-PREFIX = 'E:/datas/images'
+OUT_PATH = '../../../ocr_crnn_001/train_lmdb'
+IN_PATH = '../../../ocr_crnn_001/train.txt'
+PREFIX = '../../../ocr_crnn_001/images'
 
 
 def checkImageIsValid(imageBin):

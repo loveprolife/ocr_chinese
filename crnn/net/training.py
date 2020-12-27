@@ -1,11 +1,5 @@
 # -*- coding: utf-8 -*-
 # !/usr/bin/python
-'''
-
-
-
-'''
-
 import time
 import os
 
@@ -21,18 +15,18 @@ from keras.callbacks import ModelCheckpoint, ReduceLROnPlateau, TensorBoard, Ear
 
 from PIL import Image
 
-from .network import crnn_network
+from network import crnn_network
 
 
 img_h = 32
 img_w = 280
 batch_size = 64
-train_label_file = 'E:/datas/train.txt'
-test_label_file = 'E:/datas/test.txt'
-root_image_path = 'E:/datas/images/'
+train_label_file = '../../../ocr_crnn_001/train.txt'
+test_label_file = '../../../ocr_crnn_001/test.txt'
+root_image_path = '../../../ocr_crnn_001/images/'
 
-save_weigths = 'F:\ocr_detection\project_OCR\crnn\model\crnn_weights-{epoch:02d}.hdf5'
-save_tensorboard = 'F:\ocr_detection\project_OCR\crnn\model\log'
+save_weigths = '../model/crnn_weights-{epoch:02d}.hdf5'
+save_tensorboard = '../model/log'
 
 pre_train_weigths = 'pre-train_weights_good.hdf5'
 
@@ -188,17 +182,17 @@ if __name__ == '__main__':
     tensorboard = TensorBoard(save_tensorboard,
                               write_graph=True)
 
-    # model.fit_generator(
-    #     cc1,
-    #     steps_per_epoch=3279606 // batch_size,
-    #     epochs=4,
-    #     validation_data=cc2,
-    #     callbacks=[earlystop, checkpointer, tensorboard],
-    #     validation_steps=364400 // batch_size)
+    model.fit_generator(
+        cc1,
+        steps_per_epoch=3279606 // batch_size,
+        epochs=4,
+        validation_data=cc2,
+        callbacks=[earlystop, checkpointer, tensorboard],
+        validation_steps=364400 // batch_size)
 
-    # model.save()
-    # model.save_weights()
+    model.save()
+    model.save_weights()
 
     yaml_string = basemodel.to_yaml()
-    with open('crnn_model.yaml','w') as f:
+    with open('crnn_model.yaml', 'w') as f:
         f.write(yaml_string)

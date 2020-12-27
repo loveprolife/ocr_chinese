@@ -23,7 +23,7 @@ from keras.models import Model
 from keras.optimizers import SGD, Adam, Adadelta, RMSprop
 
 img_h = 32
-char_file = './crnn/net/char_std_5990.txt'
+char_file = './char_std_5990.txt'
 
 char = ''
 with open(char_file, encoding='utf-8') as f:
