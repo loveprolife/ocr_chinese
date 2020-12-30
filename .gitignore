@@ -13,3 +13,4 @@ east/test/image4/
 east/test/image5/
 east/test/.DS_Store
 crnn/model/log/
+test/

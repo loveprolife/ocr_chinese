@@ -155,6 +155,9 @@ if __name__ == '__main__':
     if os.path.exists(pre_train_weigths):
         basemodel.load_weights(pre_train_weigths)
 
+    #model, crnn_model = crnn_network()
+    basemodel.load_weights('../model/crnn_model_weights.hdf5')
+
     print('-----------begin_fit------------')
 
     cc1 = gen(train_label_file, batch_size)
