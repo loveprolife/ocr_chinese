@@ -180,7 +180,7 @@ if __name__ == '__main__':
     earlystop = EarlyStopping(patience=10)
 
     tensorboard = TensorBoard(save_tensorboard,
-                              write_graph=True, update_freq=1280)
+                              write_graph=True, histogram_freq=0, write_images=True)
 
     model.fit_generator(
         cc1,
