@@ -28,7 +28,7 @@ elif max_train_img_size == 512:
     batch_size = 2
 else:
     batch_size = 1
-batch_size = 2
+# batch_size = 2
 steps_per_epoch = total_img * (1 - validation_split_ratio) // batch_size
 # steps_per_epoch = 1
 validation_steps = total_img * validation_split_ratio // batch_size
